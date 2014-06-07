@@ -3,14 +3,13 @@ m=sys.stdin.readline().split(" ")
 p=m.pop(0)
 s=list(m[0]) if m else []
 x=y=0
-d=[]
+d=[0]*30000
 b={}
 for i in range(len(p)):
 	h=p[i]
 	if h=='[':d.append(i)
 	if h==']':b[d.pop()]=i
 for k in b.keys():b[b[k]]=k
-d=[0]*30000
 while y<len(p):
 	c=p[y]
 	if c=='>':x+=1
