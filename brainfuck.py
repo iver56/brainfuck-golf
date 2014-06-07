@@ -16,6 +16,6 @@ while y<len(p):
 	if c in '+-':d[x]+=int(c+'1')
 	if c=='.':print chr(d[x])
 	if c==',':d[x]=ord(s.pop(0)) if s else -1
-	if c=='[' and not d[x]:y=b[y]
+	if c=='[' and d[x]==0:y=b[y]
 	if c==']':y=b[y]-1
 	y+=1
