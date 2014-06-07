@@ -14,8 +14,7 @@ while y<len(p):
 	c=p[y]
 	if c=='>':x+=1
 	if c=='<':x-=1
-	if c=='+':d[x]+=1
-	if c=='-':d[x]-=1
+	if c in '+-':d[x]+=int(c+'1')
 	if c=='.':print chr(d[x])
 	if c==',':d[x]=ord(s.pop(0)) if s else -1
 	if c=='[' and not d[x]:y=b[y]
