@@ -6,9 +6,8 @@ x=y=0
 d=[0]*30000
 b={}
 for i in range(len(p)):
-	h=p[i]
-	if h=='[':d.append(i)
-	if h==']':b[d.pop()]=i
+	if p[i]=='[':d.append(i)
+	if p[i]==']':b[d.pop()]=i
 for k in b.keys():b[b[k]]=k
 while y<len(p):
 	c=p[y]
