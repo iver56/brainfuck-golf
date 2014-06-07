@@ -1,7 +1,8 @@
 import sys
 m=sys.stdin.readline().split()
 p=m.pop(0)
-s=list(m[0]) if m else []
+s=[]
+if m:s=list(m[0])
 x=y=0
 d=[0]*30000
 b={}
