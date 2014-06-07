@@ -1,7 +1,7 @@
 import sys
 m=sys.stdin.readline().split(" ")
-p=m[0]
-s=list(m[1]) if len(m)>1 else []
+p=m.pop(0)
+s=list(m[0]) if m else []
 x=y=0
 d=[]
 b={}
