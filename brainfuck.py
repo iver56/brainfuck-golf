@@ -3,12 +3,11 @@ import sys
 myinput = sys.stdin.readline().split(" ")
 program = myinput[0]
 stdin = myinput[1] if len(myinput) > 1 else ""
+
 stdin_pointer = 0
 data_pointer = 0
 data = [0] * 30000
 program_pointer = 0
-
-output = ""
 
 bracket_stack = []
 brackets = {}
@@ -31,9 +30,9 @@ while program_pointer < len(program):
     elif c == '-':
         data[data_pointer] -= 1
     elif c == '.':
-        output += chr(data[data_pointer])
+        print chr(data[data_pointer])
     elif c == ',':
-        data[data_pointer] = stdin[stdin_pointer]
+        data[data_pointer] = ord(stdin[stdin_pointer]) if stdin_pointer < len(stdin) else -1
         stdin_pointer += 1
     elif c == '[':
         if not data[data_pointer]:
@@ -41,5 +40,4 @@ while program_pointer < len(program):
     elif c == ']':
         program_pointer = brackets[program_pointer] - 1
     program_pointer += 1
-    
-print output
+
