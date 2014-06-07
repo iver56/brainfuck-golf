@@ -1,9 +1,8 @@
 import sys
 m=sys.stdin.readline().split()
 p=m.pop(0)
-s=[]
+s=x=y=0
 if m:s=list(m[0])
-x=y=0
 d=[0]*30000
 b={}
 for i in range(len(p)):
