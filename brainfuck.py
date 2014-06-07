@@ -7,9 +7,7 @@ d=[0]*30000
 b={}
 for i in range(len(p)):
 	if p[i]=='[':d.append(i)
-	if p[i]==']':
-		u=d.pop()
-		b[u],b[i]=i,u
+	if p[i]==']':u=d.pop();b[u],b[i]=i,u
 while y<len(p):
 	c=p[y]
 	if c=='>':x+=1
