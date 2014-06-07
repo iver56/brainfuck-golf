@@ -5,10 +5,11 @@ s=x=y=0
 if m:s=list(m[0])
 d=[0]*30000
 b={}
-for i in range(len(p)):
+l=len(p)
+for i in range(l):
 	if p[i]=='[':d.append(i)
 	if p[i]==']':u=d.pop();b[u],b[i]=i,u
-while y<len(p):
+while y<l:
 	c=p[y]
 	if c=='>':x+=1
 	if c=='<':x-=1

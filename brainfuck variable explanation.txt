@@ -5,3 +5,4 @@ d=data
 m=whole stdin string
 s=input to the brainfuck program
 b=brackets dictionary
+l=length of program
