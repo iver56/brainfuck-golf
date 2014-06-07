@@ -1,5 +1,5 @@
 import sys
-m=sys.stdin.readline().split(" ")
+m=sys.stdin.readline().split()
 p=m.pop(0)
 s=list(m[0]) if m else []
 x=y=0
