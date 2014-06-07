@@ -1,30 +1,29 @@
 import sys
-
-myinput = sys.stdin.readline().split(" ")
-program = myinput[0]
-stdin = list(myinput[1]) if len(myinput) > 1 else []
+m = sys.stdin.readline().split(" ")
+p = m[0]
+s = list(m[1]) if len(m) > 1 else []
 
 data_pointer = 0
-data = [0] * 30000
+d = [0]*30000
 program_pointer = 0
 
 bracket_stack = []
 brackets = {}
-for i in range(len(program)):
-    if program[i] == '[': bracket_stack.append(i)
-    if program[i] == ']': brackets[bracket_stack.pop()] = i
+for i in range(len(p)):
+    if p[i] == '[': bracket_stack.append(i)
+    if p[i] == ']': brackets[bracket_stack.pop()] = i
 for k in brackets.keys():
     brackets[brackets[k]] = k
 
-while program_pointer < len(program):
-    c = program[program_pointer]
+while program_pointer < len(p):
+    c = p[program_pointer]
     if c == '>': data_pointer += 1
     elif c == '<': data_pointer -= 1
-    elif c == '+': data[data_pointer] += 1
-    elif c == '-': data[data_pointer] -= 1
-    elif c == '.': print chr(data[data_pointer])
-    elif c == ',': data[data_pointer] = ord(stdin.pop()) if stdin else -1
-    elif c == '[' and not data[data_pointer]: program_pointer = brackets[program_pointer]
+    elif c == '+': d[data_pointer] += 1
+    elif c == '-': d[data_pointer] -= 1
+    elif c == '.': print chr(d[data_pointer])
+    elif c == ',': d[data_pointer] = ord(s.pop(0)) if s else -1
+    elif c == '[' and not d[data_pointer]: program_pointer = brackets[program_pointer]
     elif c == ']': program_pointer = brackets[program_pointer] - 1
     program_pointer += 1
 
