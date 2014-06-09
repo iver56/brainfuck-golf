@@ -15,5 +15,5 @@ while y<l:
 	if c==46:print chr(d[x])
 	if c==44:d[x]=ord(s.pop(0)) if s else -1
 	if (d[x]==0)*c==91:y=b[y]
-	if c==93:y=b[y]-1
+	if c>92:y=b[y]-1
 	y+=1
