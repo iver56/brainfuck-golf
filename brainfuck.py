@@ -10,10 +10,10 @@ for i in range(l):
 	if p[i]=='[':d.append(i)
 	if p[i]==']':u=d.pop();b[u],b[i]=i,u
 while y<l:
-	c=p[y]
-	x+=c=='>';x-=c=='<';d[x]+=c=='+';d[x]-=c=='-'
-	if c=='.':print chr(d[x])
-	if c==',':d[x]=ord(s.pop(0)) if s else -1
-	if (d[x]==0)*c=='[':y=b[y]
-	if c==']':y=b[y]-1
+	c=ord(p[y])
+	x+=c==62;x-=c==60;d[x]+=c<44;d[x]-=c==45
+	if c==46:print chr(d[x])
+	if c==44:d[x]=ord(s.pop(0)) if s else -1
+	if (d[x]==0)*c==91:y=b[y]
+	if c==93:y=b[y]-1
 	y+=1
